@@ -4,10 +4,11 @@ function identification() {
   var lastname = document.getElementById('lastname').value;
   var firstname = document.getElementById('firstname').value;
   var city = document.getElementById('city').value;
+  var regex = /^[A-Za-z\-àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœç]+$/;
 //Regex
-  if(/^[A-Za-z\-àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœç]+$/.test(lastname && firstname && city) == true) {
+  if((regex.test(lastname) == true) && (regex.test(firstname) == true) && (regex.test(city) == true)) {
     alert('Nom : '+ lastname + '\nPrénom : ' + firstname + '\nCity : '+ city);
-  }else {
+  }else{
     alert('Ceci n\'est pas une lettre.');
   }
 }
